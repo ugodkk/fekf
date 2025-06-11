@@ -1,0 +1,51 @@
+/* printstream-background.css: Fundo Printstream CS2 para FEKF */
+:root {
+  --ps-bg: #f5f5f5;
+  --ps-line: #22222222;
+  --ps-line2: #44444422;
+  --ps-holo1: #e0b3ff;
+  --ps-holo2: #7ee8fa;
+  --ps-holo3: #f7a8ff;
+  --ps-holo4: #b5ffd9;
+  --ps-holo5: #b3c6ff;
+}
+body {
+  background: var(--ps-bg);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.ps-bg-svg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+.ps-holo-text {
+  background: linear-gradient(90deg, var(--ps-holo1), var(--ps-holo2), var(--ps-holo3), var(--ps-holo4), var(--ps-holo5), var(--ps-holo1));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: ps-holo-move 6s linear infinite alternate;
+  font-style: italic;
+  font-family: 'Segoe UI', 'Orbitron', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+@keyframes ps-holo-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+/* Linhas decorativas minimalistas */
+.ps-bg-svg svg {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+/* Responsividade: manter centro visual */
+@media (max-width: 700px) {
+  .ps-bg-svg svg { height: 120vh; }
+}

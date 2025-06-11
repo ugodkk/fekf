@@ -14,9 +14,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="css/style.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/printstream-background.css">
   <script defer src="js/scripts.js"></script>
 </head>
 <body>
+  <div class="ps-bg-svg">
+    <svg viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="100" x2="1920" y2="100" stroke="var(--ps-line)" stroke-width="2"/>
+      <line x1="0" y1="300" x2="1920" y2="350" stroke="var(--ps-line2)" stroke-width="1.5"/>
+      <line x1="0" y1="600" x2="1920" y2="650" stroke="var(--ps-line)" stroke-width="2"/>
+      <line x1="0" y1="900" x2="1920" y2="950" stroke="var(--ps-line2)" stroke-width="1.5"/>
+      <rect x="1600" y="60" width="120" height="18" rx="4" fill="var(--ps-line)"/>
+      <rect x="100" y="900" width="80" height="12" rx="3" fill="var(--ps-line2)"/>
+      <polyline points="1800,200 1850,220 1900,180" stroke="var(--ps-line)" stroke-width="2" fill="none"/>
+      <text x="60" y="200" font-size="32" font-family="'Orbitron', 'Segoe UI', Arial, sans-serif" fill="var(--ps-line)">#FEKF</text>
+      <text x="1700" y="1040" font-size="22" font-family="'Orbitron', 'Segoe UI', Arial, sans-serif" fill="var(--ps-line2)">KUNG FU</text>
+    </svg>
+  </div>
   <div id="menu-container"></div>
   <main class="main-content">
     <div class="content-block">
