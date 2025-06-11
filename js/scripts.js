@@ -1,3 +1,4 @@
+// DEPRECATED: Use apenas fekf.min.js para o site FEKF. Este arquivo não é mais atualizado.
 // scripts.js: Carrega menu.html e ativa menu top expand FEKF
 function loadMenu() {
   const menuContainer = document.getElementById('menu-container');

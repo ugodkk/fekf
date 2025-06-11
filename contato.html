@@ -10,12 +10,13 @@
   <meta property="og:description" content="Entre em contato com a Federação Estadual de Kung Fu.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="/assets/banner-fekf.jpg">
+  <link rel="canonical" href="/contato/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="css/style.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/printstream-background.css">
-  <script defer src="js/scripts.js"></script>
+  <link rel="preload" as="style" href="css/fekf.min.css">
+  <link rel="stylesheet" href="css/fekf.min.css">
+  <script src="js/fekf.min.js" defer></script>
 </head>
 <body>
   <div class="ps-bg-svg">
@@ -33,24 +34,64 @@
   </div>
   <div id="menu-container"></div>
   <main class="main-content">
-    <section class="fekf-cards">
-      <div class="fekf-card">
-        <div class="fekf-card-title">Contato</div>
+    <section class="fekf-cards" style="margin:2rem 0;">
+      <!-- Card Contato -->
+      <div class="fekf-card" tabindex="0" aria-label="Formulário de contato">
+        <div class="fekf-card-title">Fale com a FEKF</div>
+        <form id="contato-form" autocomplete="off" style="display:flex;flex-direction:column;gap:0.7em;max-width:400px;">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required minlength="3" maxlength="60" placeholder="Seu nome completo" style="padding:0.6em 1em;border-radius:7px;border:1.5px solid #b71c1c;" aria-required="true"/>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com" style="padding:0.6em 1em;border-radius:7px;border:1.5px solid #b71c1c;" aria-required="true"/>
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required minlength="10" maxlength="500" placeholder="Como podemos ajudar?" style="padding:0.6em 1em;border-radius:7px;border:1.5px solid #b71c1c;min-height:90px;" aria-required="true"></textarea>
+          <button type="submit" class="fekf-card-btn">Enviar</button>
+          <span id="contato-feedback" style="font-size:0.98em;color:#b71c1c;"></span>
+        </form>
+      </div>
+      <!-- Card Endereço e Redes Sociais -->
+      <div class="fekf-card" tabindex="0" aria-label="Endereço e redes sociais">
+        <div class="fekf-card-title">Contato & Localização</div>
         <div class="fekf-card-desc">
           Email: <a href="mailto:contato@fekf.org.br">contato@fekf.org.br</a><br>
           Telefone: (00) 0000-0000<br>
           Endereço: Rua Exemplo, 123 - Cidade/UF
         </div>
-      </div>
-      <div class="fekf-card">
-        <div class="fekf-card-title">Redes Sociais</div>
         <div class="fekf-card-social">
-          <a href="#" title="Instagram" aria-label="Instagram"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg></a>
-          <a href="#" title="Facebook" aria-label="Facebook"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><path d="M16 8h-2a2 2 0 0 0-2 2v2h4" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4" stroke="currentColor" stroke-width="2"/></svg></a>
-          <a href="#" title="YouTube" aria-label="YouTube"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="currentColor"/></svg></a>
+          <a href="#" title="WhatsApp" aria-label="WhatsApp"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#25D366" stroke-width="2"/><path d="M8 10c.5 2 2.5 4 4.5 4.5l1.5-1.5c.2-.2.5-.2.7 0l1 1c.2.2.2.5 0 .7-1.2 1.2-2.7 2-4.2 2C8.1 17 6 14.9 6 12.5c0-1.5.8-3 2-4.2.2-.2.5-.2.7 0l1 1c.2.2.2.5 0 .7L8 10z" fill="#25D366"/></svg></a>
+          <a href="#" title="Instagram" aria-label="Instagram"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#b71c1c" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#b71c1c" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="#b71c1c"/></svg></a>
+          <a href="#" title="YouTube" aria-label="YouTube"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#b71c1c" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="#b71c1c"/></svg></a>
         </div>
+      </div>
+      <!-- Card Mapa Interativo -->
+      <div class="fekf-card" tabindex="0" aria-label="Mapa interativo">
+        <div class="fekf-card-title">Como chegar</div>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-46.633309%2C-23.55052%2C-46.623309%2C-23.54052&amp;layer=mapnik" style="width:100%;min-height:220px;border-radius:10px;border:1.5px solid #b71c1c;" allowfullscreen loading="lazy" title="Mapa FEKF" aria-label="Mapa FEKF"></iframe>
       </div>
     </section>
   </main>
+  <div id="footer-container"></div>
+  <script>
+    // Carregar footer.html dinamicamente
+    fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-container').innerHTML=html;});
+    // Validação avançada do formulário de contato
+    document.addEventListener('DOMContentLoaded',function(){
+      var form=document.getElementById('contato-form');
+      if(form){
+        form.onsubmit=function(e){
+          e.preventDefault();
+          var nome=form.nome.value.trim();
+          var email=form.email.value.trim();
+          var msg=form.mensagem.value.trim();
+          var feedback=document.getElementById('contato-feedback');
+          if(nome.length<3){feedback.textContent='Nome muito curto.';return;}
+          if(!/^\S+@\S+\.\S+$/.test(email)){feedback.textContent='Digite um e-mail válido.';return;}
+          if(msg.length<10){feedback.textContent='Mensagem muito curta.';return;}
+          feedback.textContent='Mensagem enviada!';
+          form.reset();
+        };
+      }
+    });
+  </script>
 </body>
 </html>

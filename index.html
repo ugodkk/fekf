@@ -9,12 +9,23 @@
   <meta property="og:description" content="Site oficial da Federação Estadual de Kung Fu. Saiba mais sobre eventos, publicações e contato.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="/assets/banner-fekf.jpg">
+  <link rel="canonical" href="/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="css/style.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/printstream-background.css">
-  <script defer src="js/scripts.js"></script>
+  <link rel="preload" as="style" href="css/fekf.min.css">
+  <link rel="stylesheet" href="css/fekf.min.css">
+  <script src="js/fekf.min.js" defer></script>
+  <style>
+    /* Critical CSS para hero/menu/footer */
+    .fekf-hero {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem 2.5rem 1.5rem;background:var(--ps-bg);margin:2rem 0 2.5rem 0;box-shadow:0 2px 16px #0001;border-radius:18px;}
+    .fekf-hero-title{font-size:2.5rem;font-weight:800;letter-spacing:2px;color:#b71c1c;margin-bottom:1rem;}
+    .fekf-hero-desc{font-size:1.25rem;color:#222;margin-bottom:1.5rem;}
+    .fekf-hero-cta{background:#b71c1c;color:#fff;font-weight:700;padding:0.9em 2.2em;border-radius:10px;font-size:1.15rem;box-shadow:0 2px 8px #b71c1c22;transition:background .18s,transform .18s;}
+    .fekf-hero-cta:hover,.fekf-hero-cta:focus{background:#7a1010;transform:translateY(-2px) scale(1.04);}
+    @media (max-width:900px){.fekf-hero-title{font-size:2rem;}}
+    @media (max-width:700px){.fekf-hero{padding:2rem 1.2rem;}}
+  </style>
 </head>
 <body>
   <div class="ps-bg-svg">
@@ -33,51 +44,93 @@
   <!-- menu.html será carregado dinamicamente aqui -->
   <div id="menu-container"></div>
   <main class="main-content">
-    <section class="fekf-cards">
-      <!-- Card Últimos Eventos -->
-      <div class="fekf-card">
-        <div class="fekf-card-title">Últimos Eventos</div>
-        <div class="fekf-card-date">10/06/2025</div>
-        <div class="fekf-card-desc">Campeonato Estadual de Kung Fu realizado em São Paulo. Parabéns a todos os atletas!</div>
-        <a href="eventos.html" class="fekf-card-btn">Ver mais</a>
+    <section class="fekf-hero" aria-label="Bem-vindo à FEKF">
+      <img src="/assets/banner-fekf.jpg" alt="Banner FEKF" width="900" height="320" style="max-width:100%;border-radius:12px;box-shadow:0 2px 16px #0002;" loading="eager"/>
+      <h1 class="fekf-hero-title">Federação Estadual de Kung Fu</h1>
+      <p class="fekf-hero-desc">Excelência marcial, ética e união. Promovendo o Kung Fu em todo o estado.</p>
+      <a href="#contato" class="fekf-hero-cta">Associe-se</a>
+    </section>
+    <section class="fekf-cards" style="margin:2rem 0;">
+      <!-- Equipe -->
+      <div class="fekf-card" tabindex="0" aria-label="Equipe Mestre João Silva">
+        <img src="/assets/joao-silva.jpg" alt="Mestre João Silva" class="fekf-card-img" width="180" height="180" loading="lazy"/>
+        <div class="fekf-card-title">Mestre João Silva</div>
+        <div class="fekf-card-desc">Presidente<br><span style="font-size:0.98em;color:#888;">Kung Fu Tradicional</span></div>
+        <div class="fekf-card-desc">Mais de 30 anos dedicados ao Kung Fu, referência nacional em ética e formação marcial.</div>
       </div>
-      <!-- Card Mensagem do Presidente -->
-      <div class="fekf-card">
+      <div class="fekf-card" tabindex="0" aria-label="Equipe Sifu Ana Lima">
+        <img src="/assets/ana-lima.jpg" alt="Sifu Ana Lima" class="fekf-card-img" width="180" height="180" loading="lazy"/>
+        <div class="fekf-card-title">Sifu Ana Lima</div>
+        <div class="fekf-card-desc">Vice-presidente<br><span style="font-size:0.98em;color:#888;">Wushu Moderno</span></div>
+        <div class="fekf-card-desc">Atleta e professora, destaque em eventos nacionais e internacionais.</div>
+      </div>
+      <div class="fekf-card" tabindex="0" aria-label="Equipe Prof. Carlos Souza">
+        <img src="/assets/carlos-souza.jpg" alt="Prof. Carlos Souza" class="fekf-card-img" width="180" height="180" loading="lazy"/>
+        <div class="fekf-card-title">Prof. Carlos Souza</div>
+        <div class="fekf-card-desc">Diretor Técnico<br><span style="font-size:0.98em;color:#888;">Sanda</span></div>
+        <div class="fekf-card-desc">Responsável técnico por campeonatos e formação de árbitros.</div>
+      </div>
+      <!-- Mensagem do Presidente -->
+      <div class="fekf-card" tabindex="0" aria-label="Mensagem do Presidente">
         <div class="fekf-card-title">Mensagem do Presidente</div>
         <div class="fekf-card-desc">"A FEKF é mais que uma federação, é uma família dedicada à excelência marcial, ética e união. Junte-se a nós!"<br><span style="font-size:0.98em;color:#888;">— Mestre João Silva</span></div>
       </div>
-      <!-- Card Citação Inspiradora com Imagem -->
-      <div class="fekf-card">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Kung Fu" class="fekf-card-img"/>
-        <div class="fekf-card-quote">“A persistência realiza o impossível.”</div>
+      <!-- Eventos Recentes -->
+      <div class="fekf-card" tabindex="0" aria-label="Evento 1">
+        <div class="fekf-card-title">Campeonato Estadual 2025</div>
+        <div class="fekf-card-date">10/06/2025</div>
+        <div class="fekf-card-desc">O maior evento estadual de Kung Fu, reunindo atletas de todo o estado.</div>
+        <a href="#" class="fekf-card-btn">Saiba mais</a>
       </div>
-      <!-- Card Contato/Localização -->
-      <div class="fekf-card">
-        <div class="fekf-card-title">Contato & Localização</div>
-        <div class="fekf-card-desc">
-          Email: <a href="mailto:contato@fekf.org.br">contato@fekf.org.br</a><br>
-          Telefone: (00) 0000-0000<br>
-          Endereço: Rua Exemplo, 123 - Cidade/UF
-        </div>
-        <a href="contato.html" class="fekf-card-btn">Fale conosco</a>
+      <div class="fekf-card" tabindex="0" aria-label="Evento 2">
+        <div class="fekf-card-title">Seminário de Técnicas Tradicionais</div>
+        <div class="fekf-card-date">22/05/2025</div>
+        <div class="fekf-card-desc">Aprenda com mestres renomados técnicas tradicionais do Kung Fu.</div>
+        <a href="#" class="fekf-card-btn">Saiba mais</a>
       </div>
-      <!-- Card Últimas Publicações -->
-      <div class="fekf-card">
-        <div class="fekf-card-title">Últimas Publicações</div>
-        <div class="fekf-card-desc">Confira os artigos, notícias e comunicados mais recentes da FEKF.</div>
-        <a href="publicacoes.html" class="fekf-card-btn">Ver publicações</a>
+      <!-- Últimas Publicações -->
+      <div class="fekf-card" tabindex="0" aria-label="Publicação 1">
+        <div class="fekf-card-title">Artigo: A História do Kung Fu</div>
+        <div class="fekf-card-desc">Conheça as origens e evolução do Kung Fu no Brasil.</div>
+        <a href="#" class="fekf-card-btn">Ler artigo</a>
       </div>
-      <!-- Card Redes Sociais -->
-      <div class="fekf-card">
-        <div class="fekf-card-title">Redes Sociais</div>
-        <div class="fekf-card-social">
-          <a href="#" title="Instagram" aria-label="Instagram"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg></a>
-          <a href="#" title="Facebook" aria-label="Facebook"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><path d="M16 8h-2a2 2 0 0 0-2 2v2h4" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4" stroke="currentColor" stroke-width="2"/></svg></a>
-          <a href="#" title="YouTube" aria-label="YouTube"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="currentColor"/></svg></a>
-        </div>
+      <div class="fekf-card" tabindex="0" aria-label="Publicação 2">
+        <div class="fekf-card-title">Notícia: FEKF no Campeonato Nacional</div>
+        <div class="fekf-card-desc">Atletas da FEKF conquistam medalhas em evento nacional.</div>
+        <a href="#" class="fekf-card-btn">Ver notícia</a>
+      </div>
+      <!-- Newsletter -->
+      <div class="fekf-card" tabindex="0" aria-label="Newsletter">
+        <div class="fekf-card-title">Receba novidades da FEKF</div>
+        <form id="newsletter-form" autocomplete="off" style="display:flex;flex-direction:column;gap:0.7em;">
+          <label for="newsletter-email">Seu e-mail:</label>
+          <input type="email" id="newsletter-email" name="email" required placeholder="seu@email.com" style="padding:0.6em 1em;border-radius:7px;border:1.5px solid #b71c1c;max-width:320px;" aria-required="true"/>
+          <button type="submit" class="fekf-card-btn">Inscrever</button>
+          <span id="newsletter-feedback" style="font-size:0.98em;color:#b71c1c;"></span>
+        </form>
       </div>
     </section>
   </main>
-  <!-- Comentários: Adicionar footer.html no futuro -->
+  <div id="footer-container"></div>
+  <script>
+    // Carregar footer.html dinamicamente
+    fetch('footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-container').innerHTML=html;});
+    // Newsletter fictícia
+    document.addEventListener('DOMContentLoaded',function(){
+      var form=document.getElementById('newsletter-form');
+      if(form){
+        form.onsubmit=function(e){
+          e.preventDefault();
+          var email=form.email.value.trim();
+          var feedback=document.getElementById('newsletter-feedback');
+          if(!/^\S+@\S+\.\S+$/.test(email)){
+            feedback.textContent='Digite um e-mail válido.';return;
+          }
+          feedback.textContent='Inscrição realizada!';
+          form.reset();
+        };
+      }
+    });
+  </script>
 </body>
 </html>
