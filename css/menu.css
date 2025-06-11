@@ -34,7 +34,7 @@
   justify-content: space-between;
   padding: var(--fekf-menu-padding);
   position: relative;
-  transition: background 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.3s ease;
 }
 .fekf-menu-logo-area {
   display: flex;
@@ -155,7 +155,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(-30px) scaleY(0.95);
-    transition: opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    transition: all 0.3s ease;
     z-index: 1050;
   }
   .fekf-menu-wrap.open .fekf-menu-list {
@@ -163,6 +163,9 @@
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scaleY(1);
+    background: var(--fekf-menu-bg);
+    backdrop-filter: var(--fekf-menu-blur);
+    box-shadow: var(--fekf-menu-shadow);
   }
 }
 @keyframes menuExpand {

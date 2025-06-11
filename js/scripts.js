@@ -15,14 +15,12 @@ function initTopExpandMenuCodrops() {
   const menuBtn = document.getElementById('fekf-open-button');
   const menuList = document.getElementById('fekf-menu-list');
   if (menuWrap && menuBtn && menuList) {
-    menuBtn.addEventListener('click', () => {
+    menuBtn.onclick = function() {
       const isOpen = menuWrap.classList.toggle('open');
       menuBtn.classList.toggle('active', isOpen);
       menuBtn.setAttribute('aria-expanded', isOpen);
-      if (isOpen) {
-        menuList.focus();
-      }
-    });
+      if (isOpen) menuList.focus();
+    };
     // Fecha menu com ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menuWrap.classList.contains('open')) {
