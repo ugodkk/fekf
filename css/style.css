@@ -1,4 +1,4 @@
-/* style.css: Estilo geral do site institucional */
+/* style.css: Estilo geral do site institucional FEKF */
 @import url('menu.css');
 :root {
   --navbar-height: 64px;
@@ -8,6 +8,8 @@
   --block-shadow: 0 2px 8px rgba(0,0,0,0.06);
   --block-padding: 2rem;
   --gap: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
 }
 html, body {
   height: 100%;
@@ -15,8 +17,9 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--main-bg);
-  overflow: hidden;
+  color: #222;
+  background: #fafbfc;
+  overflow: hidden; /* Impede scroll vertical global */
 }
 body {
   min-height: 100vh;
@@ -31,7 +34,6 @@ body {
   align-items: center;
   padding-top: var(--navbar-height);
   height: calc(100vh - var(--navbar-height));
-  gap: var(--gap);
   box-sizing: border-box;
 }
 .content-block {
@@ -52,7 +54,6 @@ body {
 }
 @media (max-width: 700px) {
   .main-content {
-    gap: 1rem;
     padding-top: var(--navbar-height);
   }
   .content-block {
