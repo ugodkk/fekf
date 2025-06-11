@@ -1,5 +1,6 @@
 /* style.css: Estilo geral do site institucional FEKF */
 @import url('menu.css');
+@import url('cards.css');
 :root {
   --navbar-height: 64px;
   --main-bg: #f7fafc;

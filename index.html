@@ -33,11 +33,50 @@
   <!-- menu.html será carregado dinamicamente aqui -->
   <div id="menu-container"></div>
   <main class="main-content">
-    <div class="content-block">
-      <h1 class="ps-holo-text">Bem-vindo à FEKF</h1>
-      <p>Este é o site institucional da <strong>Federação Estadual de Kung Fu</strong>. Aqui você encontrará informações sobre eventos, publicações, notícias e muito mais.</p>
-      <!-- Blocos futuros: carrossel, destaques, etc. -->
-    </div>
+    <section class="fekf-cards">
+      <!-- Card Últimos Eventos -->
+      <div class="fekf-card">
+        <div class="fekf-card-title">Últimos Eventos</div>
+        <div class="fekf-card-date">10/06/2025</div>
+        <div class="fekf-card-desc">Campeonato Estadual de Kung Fu realizado em São Paulo. Parabéns a todos os atletas!</div>
+        <a href="eventos.html" class="fekf-card-btn">Ver mais</a>
+      </div>
+      <!-- Card Mensagem do Presidente -->
+      <div class="fekf-card">
+        <div class="fekf-card-title">Mensagem do Presidente</div>
+        <div class="fekf-card-desc">"A FEKF é mais que uma federação, é uma família dedicada à excelência marcial, ética e união. Junte-se a nós!"<br><span style="font-size:0.98em;color:#888;">— Mestre João Silva</span></div>
+      </div>
+      <!-- Card Citação Inspiradora com Imagem -->
+      <div class="fekf-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Kung Fu" class="fekf-card-img"/>
+        <div class="fekf-card-quote">“A persistência realiza o impossível.”</div>
+      </div>
+      <!-- Card Contato/Localização -->
+      <div class="fekf-card">
+        <div class="fekf-card-title">Contato & Localização</div>
+        <div class="fekf-card-desc">
+          Email: <a href="mailto:contato@fekf.org.br">contato@fekf.org.br</a><br>
+          Telefone: (00) 0000-0000<br>
+          Endereço: Rua Exemplo, 123 - Cidade/UF
+        </div>
+        <a href="contato.html" class="fekf-card-btn">Fale conosco</a>
+      </div>
+      <!-- Card Últimas Publicações -->
+      <div class="fekf-card">
+        <div class="fekf-card-title">Últimas Publicações</div>
+        <div class="fekf-card-desc">Confira os artigos, notícias e comunicados mais recentes da FEKF.</div>
+        <a href="publicacoes.html" class="fekf-card-btn">Ver publicações</a>
+      </div>
+      <!-- Card Redes Sociais -->
+      <div class="fekf-card">
+        <div class="fekf-card-title">Redes Sociais</div>
+        <div class="fekf-card-social">
+          <a href="#" title="Instagram" aria-label="Instagram"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg></a>
+          <a href="#" title="Facebook" aria-label="Facebook"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><path d="M16 8h-2a2 2 0 0 0-2 2v2h4" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a href="#" title="YouTube" aria-label="YouTube"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+    </section>
   </main>
   <!-- Comentários: Adicionar footer.html no futuro -->
 </body>

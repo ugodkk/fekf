@@ -1,0 +1,99 @@
+/* cards.css: Estilo para cards institucionais FEKF */
+.fekf-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+.fekf-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 1.7rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+  min-height: 120px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  color: #1f1f1f;
+}
+.fekf-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+.fekf-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: #1f1f1f;
+}
+.fekf-card-date {
+  font-size: 0.98rem;
+  color: #b71c1c;
+  font-weight: 600;
+  margin-bottom: 0.2em;
+}
+.fekf-card-desc {
+  font-size: 1.08rem;
+  color: #222;
+}
+.fekf-card-btn {
+  align-self: flex-start;
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.3em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background 0.18s;
+  text-decoration: none;
+}
+.fekf-card-btn:hover, .fekf-card-btn:focus {
+  background: #7a1010;
+}
+.fekf-card-quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #444;
+  border-left: 4px solid #b71c1c;
+  padding-left: 1em;
+  margin: 0.5em 0;
+}
+.fekf-card-img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.7em;
+}
+.fekf-card-social {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 0.5em;
+}
+.fekf-card-social a {
+  color: #b71c1c;
+  font-size: 1.5em;
+  transition: color 0.18s;
+}
+.fekf-card-social a:hover {
+  color: #222;
+}
+@media (max-width: 700px) {
+  .fekf-cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+  }
+  .fekf-card {
+    padding: 1.1rem 0.8rem;
+  }
+}
