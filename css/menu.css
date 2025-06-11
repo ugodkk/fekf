@@ -25,27 +25,25 @@
   background: none;
 }
 .fekf-menu-bar {
-  height: var(--fekf-menu-height);
-  background: var(--fekf-menu-bg);
-  backdrop-filter: var(--fekf-menu-blur);
-  box-shadow: var(--fekf-menu-shadow);
+  height: 72px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 18px 0 rgba(30,40,60,0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--fekf-menu-padding);
+  padding: 0 2rem;
   position: relative;
   transition: all 0.3s ease;
 }
-.fekf-menu-logo-area {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 180px;
+.fekf-menu-logo-link {
+  text-decoration: none;
+  display: inline-block;
 }
 .fekf-menu-logo {
   font-weight: 800;
-  font-size: var(--fekf-logo-size);
-  color: var(--fekf-logo-color);
+  font-size: 2rem;
+  color: #1f1f1f;
   letter-spacing: 2px;
   line-height: 1;
 }
@@ -114,12 +112,12 @@
   transition: none;
 }
 .fekf-menu-list li a {
-  color: var(--fekf-link-color);
+  color: #1f1f1f;
   text-decoration: none;
   font-size: 1.08rem;
   font-weight: 500;
   padding: 10px 20px;
-  border-radius: var(--fekf-link-radius);
+  border-radius: 0;
   background: transparent;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.14s;
   border: 1.5px solid transparent;
@@ -127,9 +125,9 @@
   position: relative;
 }
 .fekf-menu-list li a:hover, .fekf-menu-list li a:focus {
-  color: var(--fekf-link-hover);
-  background: var(--fekf-link-bg-hover);
-  border: 1.5px solid var(--fekf-link-hover);
+  color: #b71c1c;
+  background: rgba(183,28,28,0.07);
+  border: 1.5px solid #b71c1c;
   transform: translateY(-2px) scale(1.04);
   outline: 2.5px solid #b71c1c;
   outline-offset: 2px;
@@ -143,12 +141,12 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: var(--fekf-menu-height);
+    top: 72px;
     left: 0;
     width: 100vw;
-    background: var(--fekf-menu-bg);
-    backdrop-filter: var(--fekf-menu-blur);
-    box-shadow: var(--fekf-menu-shadow);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px 0 rgba(30,40,60,0.08);
     padding: 2rem 0 1.5rem 0;
     gap: 1.2rem;
     align-items: center;
@@ -163,9 +161,9 @@
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scaleY(1);
-    background: var(--fekf-menu-bg);
-    backdrop-filter: var(--fekf-menu-blur);
-    box-shadow: var(--fekf-menu-shadow);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px 0 rgba(30,40,60,0.08);
   }
 }
 @keyframes menuExpand {
