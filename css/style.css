@@ -1,0 +1,64 @@
+/* style.css: Estilo geral do site institucional */
+@import url('menu.css');
+:root {
+  --navbar-height: 64px;
+  --main-bg: #f7fafc;
+  --block-bg: #fff;
+  --block-radius: 16px;
+  --block-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --block-padding: 2rem;
+  --gap: 2rem;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--main-bg);
+  overflow: hidden;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
+  gap: var(--gap);
+  box-sizing: border-box;
+}
+.content-block {
+  background: var(--block-bg);
+  border-radius: var(--block-radius);
+  box-shadow: var(--block-shadow);
+  padding: var(--block-padding);
+  min-width: 320px;
+  min-height: 120px;
+  max-width: 900px;
+  width: 90vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@media (max-width: 700px) {
+  .main-content {
+    gap: 1rem;
+    padding-top: var(--navbar-height);
+  }
+  .content-block {
+    min-width: 0;
+    width: 98vw;
+    max-width: 98vw;
+    padding: 1rem;
+  }
+}
