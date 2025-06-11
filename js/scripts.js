@@ -6,36 +6,36 @@ function loadMenu() {
       .then(response => response.text())
       .then(html => {
         menuContainer.innerHTML = html;
-        initTopExpandMenu();
+        initTopExpandMenuCodrops();
       });
   }
 }
-function initTopExpandMenu() {
-  const trigger = document.querySelector('.fekf-menu-trigger');
-  const menu = document.querySelector('.fekf-topnav-menu');
-  if (trigger && menu) {
-    trigger.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      trigger.classList.toggle('active', isOpen);
-      trigger.setAttribute('aria-expanded', isOpen);
-    });
-    // Fecha menu ao clicar em link (mobile)
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 900 && menu.classList.contains('open')) {
-          menu.classList.remove('open');
-          trigger.classList.remove('active');
-          trigger.setAttribute('aria-expanded', false);
-        }
-      });
+function initTopExpandMenuCodrops() {
+  const menuWrap = document.querySelector('.fekf-menu-wrap');
+  const menuBtn = document.getElementById('fekf-open-button');
+  if (menuWrap && menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuWrap.classList.toggle('open');
+      menuBtn.classList.toggle('active', isOpen);
+      menuBtn.setAttribute('aria-expanded', isOpen);
     });
     // Fecha menu com ESC
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        trigger.classList.remove('active');
-        trigger.setAttribute('aria-expanded', false);
+      if (e.key === 'Escape' && menuWrap.classList.contains('open')) {
+        menuWrap.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', false);
       }
+    });
+    // Fecha menu ao clicar em link (mobile)
+    menuWrap.querySelectorAll('.fekf-menu-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 900 && menuWrap.classList.contains('open')) {
+          menuWrap.classList.remove('open');
+          menuBtn.classList.remove('active');
+          menuBtn.setAttribute('aria-expanded', false);
+        }
+      });
     });
   }
 }
