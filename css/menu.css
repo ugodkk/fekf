@@ -1,49 +1,39 @@
-/* menu.css: Menu FEKF fixo topo, branco, blur, responsivo, elegante */
+/* menu.css: Menu Top Expand FEKF inspirado na Codrops */
 :root {
   --fekf-navbar-height: 72px;
-  --fekf-navbar-bg: rgba(255,255,255,0.85);
+  --fekf-navbar-bg: rgba(255,255,255,0.92);
   --fekf-navbar-blur: blur(10px);
   --fekf-navbar-shadow: 0 4px 18px 0 rgba(30,40,60,0.08);
-  --fekf-navbar-radius: 0 0 18px 18px;
-  --fekf-navbar-padding: 1rem 2rem;
-  --fekf-logo-color: #222;
+  --fekf-navbar-padding: 0 2rem;
+  --fekf-logo-color: #1f1f1f;
   --fekf-logo-size: 2rem;
   --fekf-subtitle-color: #444;
   --fekf-subtitle-size: 0.95rem;
-  --fekf-link-color: #222;
+  --fekf-link-color: #1f1f1f;
   --fekf-link-hover: #b71c1c;
   --fekf-link-radius: 14px;
   --fekf-link-bg-hover: rgba(183,28,28,0.07);
-  --fekf-gap: 2vw;
-  --fekf-menu-toggle-bg: #fff;
-  --fekf-menu-toggle-bar: #222;
-  --fekf-menu-toggle-radius: 50%;
-  --fekf-menu-toggle-shadow: 0 2px 8px rgba(30,40,60,0.10);
+  --fekf-menu-bg: #fff;
+  --fekf-menu-shadow: 0 8px 32px rgba(30,40,60,0.12);
+  --fekf-menu-transition: cubic-bezier(0.77,0,0.175,1) 0.5s;
 }
-.fekf-navbar {
+.fekf-topnav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
+  z-index: 1000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.fekf-topnav-bar {
   height: var(--fekf-navbar-height);
   background: var(--fekf-navbar-bg);
   backdrop-filter: var(--fekf-navbar-blur);
   box-shadow: var(--fekf-navbar-shadow);
-  border-radius: var(--fekf-navbar-radius);
-  z-index: 1000;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  transition: box-shadow 0.3s;
-}
-.fekf-navbar-content {
-  width: 100vw;
-  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--fekf-navbar-padding);
-  margin: 0 auto;
 }
 .fekf-logo-area {
   display: flex;
@@ -52,7 +42,6 @@
   min-width: 180px;
 }
 .fekf-logo {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 800;
   font-size: var(--fekf-logo-size);
   color: var(--fekf-logo-color);
@@ -60,7 +49,6 @@
   line-height: 1;
 }
 .fekf-subtitle {
-  font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   font-size: var(--fekf-subtitle-size);
   color: var(--fekf-subtitle-color);
@@ -68,109 +56,127 @@
   margin-top: 2px;
   line-height: 1.1;
 }
-.fekf-nav-links {
+.fekf-menu-trigger {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
   display: flex;
-  gap: var(--fekf-gap);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1100;
+}
+.fekf-menu-icon {
+  width: 32px;
+  height: 4px;
+  background: var(--fekf-link-color);
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.3s;
+}
+.fekf-menu-icon::before,
+.fekf-menu-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  background: var(--fekf-link-color);
+  border-radius: 2px;
+  transition: transform 0.5s var(--fekf-menu-transition), opacity 0.3s;
+}
+.fekf-menu-icon::before {
+  top: -10px;
+}
+.fekf-menu-icon::after {
+  top: 10px;
+}
+.fekf-menu-trigger.active .fekf-menu-icon {
+  background: transparent;
+}
+.fekf-menu-trigger.active .fekf-menu-icon::before {
+  transform: translateY(10px) rotate(45deg);
+}
+.fekf-menu-trigger.active .fekf-menu-icon::after {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.fekf-topnav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  background: var(--fekf-menu-bg);
+  box-shadow: var(--fekf-menu-shadow);
+  overflow: hidden;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: height 0.5s var(--fekf-menu-transition);
+}
+.fekf-topnav-menu.open {
+  height: 260px;
+}
+.fekf-menu-links {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1.2rem;
+  margin-top: 90px;
 }
-.fekf-nav-links li a {
+.fekf-menu-links li a {
   color: var(--fekf-link-color);
   text-decoration: none;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 12px 32px;
   border-radius: var(--fekf-link-radius);
   background: transparent;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.14s;
   border: 1.5px solid transparent;
   outline: none;
 }
-.fekf-nav-links li a:hover, .fekf-nav-links li a:focus {
+.fekf-menu-links li a:hover, .fekf-menu-links li a:focus {
   color: var(--fekf-link-hover);
   background: var(--fekf-link-bg-hover);
   border: 1.5px solid var(--fekf-link-hover);
   transform: translateY(-2px) scale(1.04);
 }
-.fekf-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background: var(--fekf-menu-toggle-bg);
-  border: none;
-  border-radius: var(--fekf-menu-toggle-radius);
-  box-shadow: var(--fekf-menu-toggle-shadow);
-  cursor: pointer;
-  margin-left: 1vw;
-  transition: background 0.2s, box-shadow 0.2s;
+.fekf-menu-links li a:focus, .fekf-menu-trigger:focus {
+  outline: 2.5px solid #b71c1c;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(183,28,28,0.12);
 }
-.fekf-menu-toggle:focus {
-  outline: 2px solid var(--fekf-link-hover);
-}
-.fekf-bar {
-  width: 28px;
-  height: 3.5px;
-  background: var(--fekf-menu-toggle-bar);
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-@media (max-width: 900px) {
-  .fekf-navbar-content {
-    padding: 1rem 1vw;
-  }
-  .fekf-nav-links {
-    gap: 1vw;
-  }
-}
-@media (max-width: 700px) {
-  .fekf-navbar-content {
+@media (min-width: 900px) {
+  .fekf-topnav-menu {
+    position: static;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    overflow: visible;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+    transition: none;
+    width: auto;
   }
-  .fekf-menu-toggle {
-    display: flex;
+  .fekf-menu-links {
+    flex-direction: row;
+    gap: 2vw;
+    margin-top: 0;
+    height: auto;
   }
-  .fekf-nav-links {
-    position: fixed;
-    top: var(--fekf-navbar-height);
-    left: 0;
-    width: 100vw;
-    background: var(--fekf-navbar-bg);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    box-shadow: 0 8px 24px rgba(30,40,60,0.10);
-  }
-  .fekf-nav-links.open {
-    max-height: 320px;
-  }
-  .fekf-nav-links li {
-    width: 100%;
-  }
-  .fekf-nav-links li a {
-    display: block;
-    width: 100%;
-    padding: 18px 32px;
-    border-radius: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    font-size: 1.13rem;
-  }
-  .fekf-nav-links li a:hover, .fekf-nav-links li a:focus {
-    border-left: 4px solid var(--fekf-link-hover);
-    border-right: 4px solid var(--fekf-link-hover);
-    background: var(--fekf-link-bg-hover);
+  .fekf-menu-trigger {
+    display: none;
   }
 }

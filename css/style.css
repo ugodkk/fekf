@@ -52,6 +52,54 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
+.fade-in {
+  animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.darkmode-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  background: #fff;
+  color: #1f1f1f;
+  border: 1.5px solid #b71c1c;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(30,40,60,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.darkmode-toggle:hover, .darkmode-toggle:focus {
+  background: #b71c1c;
+  color: #fff;
+  outline: none;
+}
+body.dark-mode {
+  background: #181a1b;
+  color: #f7fafc;
+}
+body.dark-mode .content-block {
+  background: #23272b;
+  color: #f7fafc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.dark-mode .fekf-topnav-bar, body.dark-mode .fekf-topnav-menu {
+  background: rgba(24,26,27,0.92) !important;
+  color: #f7fafc;
+}
+body.dark-mode .fekf-logo, body.dark-mode .fekf-menu-links li a {
+  color: #f7fafc !important;
+}
+body.dark-mode .fekf-menu-links li a:hover, body.dark-mode .fekf-menu-links li a:focus {
+  color: #b71c1c !important;
+  background: rgba(183,28,28,0.13) !important;
+}
 @media (max-width: 700px) {
   .main-content {
     padding-top: var(--navbar-height);
