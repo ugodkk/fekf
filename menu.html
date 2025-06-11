@@ -1,20 +1,20 @@
-<!-- menu.html: Menu Top Expand FEKF inspirado em Codrops -->
-<div class="fekf-menu-wrap">
-  <nav class="fekf-menu" aria-label="Menu principal">
+<!-- menu.html: Menu Top Expand FEKF refinado -->
+<nav class="fekf-menu-wrap" role="navigation" aria-label="Menu principal">
+  <div class="fekf-menu-bar">
     <div class="fekf-menu-logo-area">
       <span class="fekf-menu-logo">FEKF</span>
       <span class="fekf-menu-subtitle">FEDERAÇÃO ESTADUAL DE KUNG FU</span>
     </div>
-    <div class="fekf-menu-list">
-      <a href="index.html"><span>Início</span></a>
-      <a href="sobre.html"><span>Sobre</span></a>
-      <a href="eventos.html"><span>Eventos</span></a>
-      <a href="publicacoes.html"><span>Publicações</span></a>
-      <a href="contato.html"><span>Contato</span></a>
-    </div>
-  </nav>
-  <button class="fekf-menu-button" id="fekf-open-button" aria-label="Abrir menu" aria-expanded="false">
-    <span class="fekf-menu-icon"></span>
-  </button>
-</div>
+    <button class="fekf-menu-button" id="fekf-open-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="fekf-menu-list">
+      <span class="fekf-menu-icon"></span>
+    </button>
+    <ul class="fekf-menu-list" id="fekf-menu-list">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="publicacoes.html">Publicações</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </div>
+</nav>
 <!-- Fim do menu.html -->

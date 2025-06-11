@@ -13,11 +13,15 @@ function loadMenu() {
 function initTopExpandMenuCodrops() {
   const menuWrap = document.querySelector('.fekf-menu-wrap');
   const menuBtn = document.getElementById('fekf-open-button');
-  if (menuWrap && menuBtn) {
+  const menuList = document.getElementById('fekf-menu-list');
+  if (menuWrap && menuBtn && menuList) {
     menuBtn.addEventListener('click', () => {
       const isOpen = menuWrap.classList.toggle('open');
       menuBtn.classList.toggle('active', isOpen);
       menuBtn.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        menuList.focus();
+      }
     });
     // Fecha menu com ESC
     document.addEventListener('keydown', (e) => {
@@ -25,10 +29,11 @@ function initTopExpandMenuCodrops() {
         menuWrap.classList.remove('open');
         menuBtn.classList.remove('active');
         menuBtn.setAttribute('aria-expanded', false);
+        menuBtn.focus();
       }
     });
     // Fecha menu ao clicar em link (mobile)
-    menuWrap.querySelectorAll('.fekf-menu-list a').forEach(link => {
+    menuList.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth < 900 && menuWrap.classList.contains('open')) {
           menuWrap.classList.remove('open');

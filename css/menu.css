@@ -1,4 +1,4 @@
-/* menu.css: Menu Top Expand FEKF inspirado na Codrops */
+/* menu.css: Menu Top Expand FEKF refinado */
 :root {
   --fekf-menu-height: 72px;
   --fekf-menu-bg: rgba(255,255,255,0.92);
@@ -22,8 +22,9 @@
   width: 100vw;
   z-index: 1000;
   font-family: 'Segoe UI', Arial, sans-serif;
+  background: none;
 }
-.fekf-menu {
+.fekf-menu-bar {
   height: var(--fekf-menu-height);
   background: var(--fekf-menu-bg);
   backdrop-filter: var(--fekf-menu-blur);
@@ -32,7 +33,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--fekf-menu-padding);
-  transition: box-shadow 0.3s;
+  position: relative;
 }
 .fekf-menu-logo-area {
   display: flex;
@@ -55,33 +56,6 @@
   margin-top: 2px;
   line-height: 1.1;
 }
-.fekf-menu-list {
-  display: flex;
-  gap: 2vw;
-  align-items: center;
-}
-.fekf-menu-list a {
-  color: var(--fekf-link-color);
-  text-decoration: none;
-  font-size: 1.08rem;
-  font-weight: 500;
-  padding: 10px 20px;
-  border-radius: var(--fekf-link-radius);
-  background: transparent;
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.14s;
-  border: 1.5px solid transparent;
-  outline: none;
-  position: relative;
-}
-.fekf-menu-list a:hover, .fekf-menu-list a:focus {
-  color: var(--fekf-link-hover);
-  background: var(--fekf-link-bg-hover);
-  border: 1.5px solid var(--fekf-link-hover);
-  transform: translateY(-2px) scale(1.04);
-  outline: 2.5px solid #b71c1c;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(183,28,28,0.12);
-}
 .fekf-menu-button {
   background: none;
   border: none;
@@ -89,12 +63,10 @@
   cursor: pointer;
   width: 48px;
   height: 48px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 2rem;
-  top: 12px;
+  position: relative;
   z-index: 1100;
 }
 .fekf-menu-icon {
@@ -131,20 +103,43 @@
 .fekf-menu-button.active .fekf-menu-icon::after {
   transform: translateY(-10px) rotate(-45deg);
 }
+.fekf-menu-list {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: none;
+}
+.fekf-menu-list li a {
+  color: var(--fekf-link-color);
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--fekf-link-radius);
+  background: transparent;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.14s;
+  border: 1.5px solid transparent;
+  outline: none;
+  position: relative;
+}
+.fekf-menu-list li a:hover, .fekf-menu-list li a:focus {
+  color: var(--fekf-link-hover);
+  background: var(--fekf-link-bg-hover);
+  border: 1.5px solid var(--fekf-link-hover);
+  transform: translateY(-2px) scale(1.04);
+  outline: 2.5px solid #b71c1c;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(183,28,28,0.12);
+}
 @media (max-width: 900px) {
-  .fekf-menu-list {
-    display: none;
-  }
   .fekf-menu-button {
     display: flex;
   }
-}
-@media (max-width: 900px) {
-  .fekf-menu-wrap.open .fekf-menu {
-    box-shadow: var(--fekf-menu-shadow), 0 8px 32px rgba(30,40,60,0.12);
-  }
-  .fekf-menu-wrap.open .fekf-menu-list {
-    display: flex;
+  .fekf-menu-list {
+    display: none;
     flex-direction: column;
     position: absolute;
     top: var(--fekf-menu-height);
@@ -158,6 +153,9 @@
     align-items: center;
     animation: menuExpand 0.5s var(--fekf-menu-transition);
     z-index: 1050;
+  }
+  .fekf-menu-wrap.open .fekf-menu-list {
+    display: flex;
   }
 }
 @keyframes menuExpand {
